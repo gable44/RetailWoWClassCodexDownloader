@@ -16,6 +16,11 @@ The script downloads the latest production build of ClassCodex, verifies the dow
 * Skips files that are already up to date
 * Prevents unsafe manifest paths
 * Uses temporary files during downloads to avoid incomplete files
+* Detects the World of Warcraft installation automatically
+* Prompts for the WoW installation folder when automatic detection fails
+* Highlights and confirms the selected AddOns folder
+* Shows installed and available versions before updating
+* Requires confirmation before installing or updating files
 * Supports a dry-run mode
 
 ## Requirements
@@ -25,15 +30,26 @@ The script downloads the latest production build of ClassCodex, verifies the dow
 
 The script uses only Python's standard library, so no additional packages are required.
 
-## Configuration
-
-Open `download_classcodex.py` and set `ADDONS_PATH` to your World of Warcraft `AddOns` folder.
-
 ## Usage
 Run the script from a terminal:
 ```bash
 python download_classcodex.py
 ```
+
+The downloader looks for World of Warcraft in registered and standard installation
+locations. If it cannot find the game, enter the top-level `World of Warcraft`
+folder when prompted. Do not enter the `AddOns` folder; the downloader derives
+`_retail_/Interface/AddOns` automatically.
+
+For a custom or portable installation, you can optionally set the
+`WOW_INSTALL_PATH` environment variable to the top-level `World of Warcraft`
+folder.
+
+After selecting the folder, the downloader asks you to confirm it. It then
+downloads and verifies the release manifest, compares the installed files with
+the available build, and displays the installed version, available version,
+build ID, and number of files requiring an update. The installation or update
+starts only after a second confirmation. Choosing no does not change addon files.
 
 ## Dry Run
 If you want to see which files would be downloaded without modifying anything, set:
@@ -42,13 +58,14 @@ DRY_RUN = True
 ```
 
 The script will:
-1. Download the current ClassCodex channel configuration.
-2. Download and verify the manifest.
-3. Verify that the manifest belongs to ClassCodex Retail.
-4. Compare local files with the expected SHA-256 hashes.
-5. Download missing or outdated files.
-6. Verify every downloaded file.
-7. Report the installed build and download results.
+1. Detect or ask for the WoW folder and confirm the highlighted destination.
+2. Download the current ClassCodex channel configuration.
+3. Download and verify the manifest.
+4. Verify that the manifest belongs to ClassCodex Retail.
+5. Compare the installed version and files with the available build.
+6. Ask before starting an installation or update.
+7. Download and verify missing or outdated files.
+8. Report the installed build and download results.
 
 
 
