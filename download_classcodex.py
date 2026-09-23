@@ -15,7 +15,7 @@ from pathlib import Path
 # ADDONS_PATH = r"C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns"
 # macOS/Linux example:
 # ADDONS_PATH = "/path/World of Warcraft/_retail_/Interface/AddOns"
-ADDONS_PATH = r"ENTER YOUR ADDON PATH"
+ADDONS_PATH = r"D:\Games\World of Warcraft\_retail_\Interface\AddOns"
 
 # Parameters for Retail.
 CDN_BASE_URL = "https://wow-class-codex.s3.us-east-1.amazonaws.com"
