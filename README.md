@@ -1,12 +1,14 @@
-# WoW ClassCodex Addon Downloader
+# WoW ClassCodex Retail Addon Downloader
 
-This repository provides a downloader script for the ClassCodex Addon for World of Warcraft.
+This repository provides a downloader script for the ClassCodex Addon for World of Warcraft Retail version.
 
 # ClassCodex Downloader
 
 A simple downloader script for the [ClassCodex](https://addons.wago.io/addons/classcodex) Addon for World of Warcraft. (https://www.icy-veins.com/download)
 
 The script downloads the latest production build of ClassCodex, verifies the downloaded files using SHA-256 checksums, and installs or updates the addon in your addons folder defined in the script folder.
+
+Looking for the Forever version? https://github.com/gable44/ForeverWoWClassCodexDownloader
 
 ## Features
 
@@ -21,18 +23,18 @@ The script downloads the latest production build of ClassCodex, verifies the dow
 ## Requirements
 
 * Python 3.9 or newer
-* World of Warcraft game client
+* World of Warcraft Retail game client
 
 The script uses only Python's standard library, so no additional packages are required.
 
 ## Configuration
 
-Open `download_classcodex.py` and set `ADDONS_PATH` to your World of Warcraft `AddOns` folder.
+Open `download_classcodex-retail.py` and set `ADDONS_PATH` to your World of Warcraft `AddOns` folder.
 
 ## Usage
 Run the script from a terminal:
 ```bash
-python download_classcodex.py
+python download_classcodex-retail.py
 ```
 
 ## Dry Run
