@@ -18,7 +18,7 @@ from pathlib import Path
 ADDONS_PATH = r"ENTER YOUR ADDON PATH"
 
 # Parameters for Retail.
-CDN_BASE_URL = "https://wow-class-codex.s3.us-east-1.amazonaws.com"
+CDN_BASE_URL = "https://static.bigbrain.gg/wow/addons/class-codex"
 GAME_VERSION_ID = "retail"
 RELEASE_CHANNEL = "production"
 DOWNLOAD_TIMEOUT_SECONDS = 60
